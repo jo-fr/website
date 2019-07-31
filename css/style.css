@@ -5,23 +5,40 @@
 }
 
 @font-face {
-  font-family: Rubik;
-  src: url("/Rubik/Rubik-Regular.ttf");
+  font-family: "Rubik";
+  src: url("fonts/Rubik-Medium.ttf");
 }
 
 body {
-  background-color: #ebebeb;
   height: 100vh;
   width: 100vw;
 
-  font-family: "Rubik";
-  color: #303030;
+  font-family: "Rubik", sans-serif;
+  color: #000000;
+
+  background: linear-gradient(-45deg, #8fdfff, #8addaf);
+}
+
+@media (max-width: 450px) {
+  body {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 360px) {
+  body {
+    font-size: 0.6em;
+  }
 }
 
 .wrapper {
   position: relative;
   max-width: 30em;
   width: 90%;
+
+  animation-name: fadein;
+  animation-duration: 1s;
+
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -41,21 +58,125 @@ header h2 {
   font-size: 1.2em;
 }
 
+header h1 span {
+  font-size: 2em;
+  user-select: none;
+}
+
 .links ul {
   list-style: none;
   text-align: center;
+  user-select: none;
 }
 
 .links ul li {
   display: inline-block;
-  margin: 1.2em 1.5em;
+  margin: 1.2em 1.7em;
+  margin-bottom: 0;
 }
 
 .links ul li a {
   text-decoration: none;
-  color: #303030;
+  color: #000000;
 }
 
 .icon {
-  font-size: 1.6em;
+  font-size: 1.8em;
+}
+
+.fa-twitter:hover {
+  color: #38a1f3;
+}
+
+.fa-linkedin-in:hover {
+  color: #0077b5;
+}
+
+.fa-envelope:hover {
+  color: #377396;
+}
+
+.fas,
+.fab {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+.fa-twitter:before {
+  content: "\f099";
+}
+
+.fa-linkedin-in:before {
+  content: "\f0e1";
+}
+.fa-envelope:before {
+  content: "\f0e0";
+}
+
+@font-face {
+  font-family: "Font Awesome 5 Brands";
+  font-style: normal;
+  font-weight: normal;
+  font-display: auto;
+  src: url("fontawesome/fa-brands-400.eot");
+  src: url("fontawesome/fa-brands-400.eot?#iefix") format("embedded-opentype"),
+    url("fontawesome/fa-brands-400.woff2") format("woff2"),
+    url("fontawesome/fa-brands-400.woff") format("woff"),
+    url("fontawesome/fa-brands-400.ttf") format("truetype"),
+    url("fontawesome/fa-brands-400.svg#fontawesome") format("svg");
+}
+
+.fab {
+  font-family: "Font Awesome 5 Brands";
+}
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: url("fontawesome/fa-regular-400.eot");
+  src: url("fontawesome/fa-regular-400.eot?#iefix") format("embedded-opentype"),
+    url("fontawesome/fa-regular-400.woff2") format("woff2"),
+    url("fontawesome/fa-regular-400.woff") format("woff"),
+    url("fontawesome/fa-regular-400.ttf") format("truetype"),
+    url("fontawesome/fa-regular-400.svg#fontawesome") format("svg");
+}
+
+.far {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: auto;
+  src: url("fontawesome/fa-solid-900.eot");
+  src: url("fontawesome/fa-solid-900.eot?#iefix") format("embedded-opentype"),
+    url("fontawesome/fa-solid-900.woff2") format("woff2"),
+    url("fontawesome/fa-solid-900.woff") format("woff"),
+    url("fontawesome/fa-solid-900.ttf") format("truetype"),
+    url("fontawesome/fa-solid-900.svg#fontawesome") format("svg");
+}
+
+.fa,
+.fas {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    top: 55%;
+  }
+  100% {
+    opacity: 1%;
+    top: 50%;
+  }
 }
